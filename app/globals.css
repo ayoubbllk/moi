@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #0a0a0a;
+  --paper: #fafafa;
+  --ember: #f4601a;
+  --ember-hot: #ff6a24;
+  --ash: #8f8a84;
+  --graphite: #141414;
+  --line: #262626;
+  --mist: #e6e2dc;
+  --background: var(--ink);
+  --foreground: var(--paper);
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+  }
+
+  html.has-custom-cursor,
+  html.has-custom-cursor body {
+    cursor: none;
+  }
+
+  html.has-custom-cursor a,
+  html.has-custom-cursor button,
+  html.has-custom-cursor [data-cursor="hover"] {
+    cursor: none;
+  }
+
+  body {
+    @apply bg-ink text-paper antialiased;
+    font-family: var(--font-sans), system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  html.is-rtl body {
+    font-family: var(--font-ar-sans), var(--font-sans), system-ui, sans-serif;
+  }
+
+  html.is-rtl .font-display {
+    font-family: var(--font-ar-display), var(--font-display), sans-serif;
+  }
+
+  ::selection {
+    background: var(--ember);
+    color: var(--ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ember);
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.hero-fallback {
+  background:
+    radial-gradient(ellipse 90% 60% at 80% 20%, rgba(244, 96, 26, 0.28), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 10% 80%, rgba(244, 96, 26, 0.1), transparent 50%),
+    linear-gradient(180deg, #0a0a0a 0%, #141414 100%);
+}
+
+.hero-fallback::after {
+  content: "";
+  position: absolute;
+  inset: 22% 4% 8% 18%;
+  background-image:
+    linear-gradient(rgba(244, 96, 26, 0.22) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 96, 26, 0.22) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(ellipse at center, #000 18%, transparent 72%);
+  transform: perspective(520px) rotateX(62deg) rotateZ(-10deg);
+  animation: grid-drift 18s linear infinite;
+}
+
+html.is-rtl .hero-fallback::after {
+  inset: 22% 18% 8% 4%;
+  transform: perspective(520px) rotateX(62deg) rotateZ(10deg);
+}
+
+.contact-fallback {
+  background-image:
+    radial-gradient(circle at 70% 30%, rgba(244, 96, 26, 0.14), transparent 42%),
+    linear-gradient(rgba(10, 10, 10, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 10, 10, 0.07) 1px, transparent 1px);
+  background-size: auto, 28px 28px, 28px 28px;
+}
+
+.marquee-track {
+  animation: marquee 42s linear infinite;
+}
+
+html.is-rtl .marquee-track {
+  animation-name: marquee-rtl;
+}
+
+.scroll-progress {
+  transform-origin: 0 50%;
+}
+
+html.is-rtl .scroll-progress {
+  transform-origin: 100% 50%;
+}
+
+.pulse-ember {
+  animation: pulse-ember 2.4s ease-in-out infinite;
+}
+
+@keyframes grid-drift {
+  from {
+    background-position: 0 0, 0 0;
+  }
+  to {
+    background-position: 36px 36px, 36px 36px;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-rtl {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(50%);
+  }
+}
+
+@keyframes pulse-ember {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.7);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-fallback::after,
+  .marquee-track,
+  .pulse-ember {
+    animation: none !important;
+  }
+}
