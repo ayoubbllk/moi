@@ -53,7 +53,7 @@ export function Hero() {
 
       <motion.div
         style={reduced ? undefined : { y, opacity: fade }}
-        className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1440px] flex-col justify-end px-4 pb-24 pt-24 sm:px-6 sm:pb-16 md:px-10 md:pb-20"
+        className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1440px] flex-col justify-end px-4 pb-20 pt-20 sm:px-6 sm:pb-16 md:px-10 md:pb-20"
       >
         <motion.p
           initial={reduced ? false : { opacity: 0, y: 18 }}
@@ -69,7 +69,7 @@ export function Hero() {
           initial={reduced ? false : { opacity: 0, y: 48 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: easeOutExpo, delay: 0.08 }}
-          className="font-display text-[clamp(2.4rem,11vw,7.2rem)] font-bold leading-[0.9] tracking-[-0.04em]"
+          className="font-display text-[clamp(2.1rem,10vw,7.2rem)] font-bold leading-[0.9] tracking-[-0.04em]"
         >
           {t.hero.name}
         </motion.h1>
@@ -121,7 +121,7 @@ export function Hero() {
           transition={{ duration: 0.7, ease: easeOutExpo, delay: 0.72 }}
           className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center"
         >
-          <Magnetic>
+          <Magnetic className="w-full sm:w-auto">
             <Button
               type="button"
               className="w-full sm:w-auto"
@@ -131,7 +131,7 @@ export function Hero() {
               {t.hero.ctaPrimary}
             </Button>
           </Magnetic>
-          <Magnetic>
+          <Magnetic className="w-full sm:w-auto">
             <Button
               type="button"
               variant="ghost"
@@ -162,7 +162,7 @@ export function Hero() {
       <button
         type="button"
         onClick={() => scrollToId("a-propos")}
-        className="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-paper/40 md:bottom-8"
+        className="absolute bottom-5 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 text-paper/40 md:bottom-8 md:flex"
         aria-label={t.nav.about}
       >
         <span className="h-10 w-px bg-gradient-to-b from-ember to-transparent" />

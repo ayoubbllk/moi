@@ -29,6 +29,7 @@ export const projects: Project[] = [
     stack: "Next.js · e-commerce B2B",
     url: "https://cosmevadz.com",
     accent: "#C4A574",
+    image: "/projects/cosmeva.png",
   },
   {
     slug: "inass-meuble",
@@ -40,6 +41,7 @@ export const projects: Project[] = [
     stack: "Next.js · RTL · COD",
     url: "https://inass-meuble.com",
     accent: "#8B7355",
+    image: "/projects/inass-meuble.png",
   },
   {
     slug: "leagb",
@@ -51,6 +53,7 @@ export const projects: Project[] = [
     stack: "Next.js · vitrine technique",
     url: "https://laboratoire-legab.com",
     accent: "#4A6FA5",
+    image: "/projects/leagb.png",
   },
   {
     slug: "ballers",
@@ -62,6 +65,7 @@ export const projects: Project[] = [
     stack: "Next.js · e-commerce",
     url: "https://ballersdz.com",
     accent: "#E8E8E8",
+    image: "/projects/ballers.png",
   },
   {
     slug: "kocem",
@@ -73,6 +77,7 @@ export const projects: Project[] = [
     stack: "Next.js · e-commerce",
     url: "https://kocemdz.com",
     accent: "#D4A0A0",
+    image: "/projects/kocem.png",
   },
   {
     slug: "dr-amrani",
@@ -84,6 +89,7 @@ export const projects: Project[] = [
     stack: "Next.js · éditorial médical",
     url: "https://dramrani-cardiologie.com",
     accent: "#6B8E9F",
+    image: "/projects/dr-amrani.png",
   },
   {
     slug: "souk-lhoma",
@@ -95,6 +101,7 @@ export const projects: Project[] = [
     stack: "E-commerce",
     url: "https://souklhoma.com",
     accent: "#B85C38",
+    image: "/projects/souk-lhoma.svg",
   },
   {
     slug: "yousra-entrepot",
@@ -106,6 +113,7 @@ export const projects: Project[] = [
     stack: "Next.js · site industriel",
     url: "https://sarlyousraentrepot.com",
     accent: "#C4A35A",
+    image: "/projects/yousra-entrepot.png",
   },
   {
     slug: "sm-boutique",
@@ -117,6 +125,7 @@ export const projects: Project[] = [
     stack: "Next.js · RTL arabe",
     url: "https://smboutique-dz.com",
     accent: "#C9A227",
+    image: "/projects/sm-boutique.png",
   },
   {
     slug: "digitag",
@@ -128,6 +137,7 @@ export const projects: Project[] = [
     stack: "Next.js · catalogue B2B",
     url: "https://digitag-dz.com",
     accent: "#3D7A5A",
+    image: "/projects/digitag.png",
   },
   {
     slug: "akham-films",
@@ -139,6 +149,7 @@ export const projects: Project[] = [
     stack: "Next.js · éditorial",
     url: "https://akhamfilms.com",
     accent: "#E8D5A3",
+    image: "/projects/akham-films.png",
   },
   {
     slug: "2a2h",
@@ -150,6 +161,7 @@ export const projects: Project[] = [
     stack: "Next.js · vitrine cabinet",
     url: "https://2a2h-hamouchehanifa.com",
     accent: "#A67C52",
+    image: "/projects/2a2h.png",
   },
   {
     slug: "swab",
@@ -161,6 +173,7 @@ export const projects: Project[] = [
     stack: "Site industriel",
     url: "https://swabdz.com",
     accent: "#5C6B73",
+    image: "/projects/swab.png",
   },
   {
     slug: "sada",
@@ -172,5 +185,6 @@ export const projects: Project[] = [
     stack: "Next.js · site événementiel",
     url: "https://sadacorp.com",
     accent: "#C9A227",
+    image: "/projects/sada.png",
   },
 ];

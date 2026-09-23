@@ -160,7 +160,7 @@ export function Contact() {
         href={wa}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed inset-x-4 bottom-4 z-40 flex h-12 items-center justify-center gap-2 bg-ember font-mono text-[10px] uppercase tracking-[0.16em] text-ink shadow-lg lg:hidden"
+        className="fixed bottom-4 end-4 z-40 inline-flex h-12 items-center gap-2 bg-ember px-4 font-mono text-[10px] uppercase tracking-[0.16em] text-ink shadow-lg lg:hidden"
       >
         <MessageCircle size={14} />
         {t.contact.whatsapp}

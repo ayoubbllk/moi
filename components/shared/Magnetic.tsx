@@ -1,6 +1,6 @@
 "use client";
 
-import { usePrefersReducedMotion } from "@/lib/hooks";
+import { useIsMobile, usePrefersReducedMotion } from "@/lib/hooks";
 import { cn } from "@/lib/utils";
 import { useRef, type ReactNode } from "react";
 
@@ -15,13 +15,14 @@ export function Magnetic({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const reduced = usePrefersReducedMotion();
+  const mobile = useIsMobile(900);
 
   return (
     <div
       ref={ref}
       className={cn("inline-block will-change-transform", className)}
       onMouseMove={(e) => {
-        if (reduced || !ref.current) return;
+        if (reduced || mobile || !ref.current) return;
         const r = ref.current.getBoundingClientRect();
         const x = (e.clientX - r.left - r.width / 2) * strength;
         const y = (e.clientY - r.top - r.height / 2) * strength;

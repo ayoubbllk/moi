@@ -1,6 +1,6 @@
 "use client";
 
-import { usePrefersReducedMotion } from "@/lib/hooks";
+import { useIsMobile, usePrefersReducedMotion } from "@/lib/hooks";
 import { cn } from "@/lib/utils";
 import { useRef, type ReactNode } from "react";
 
@@ -13,12 +13,13 @@ export function TiltCard({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const reduced = usePrefersReducedMotion();
+  const mobile = useIsMobile(900);
 
   return (
     <div
       className={cn("[perspective:1100px]", className)}
       onMouseMove={(e) => {
-        if (reduced || !ref.current) return;
+        if (reduced || mobile || !ref.current) return;
         const r = ref.current.getBoundingClientRect();
         const px = (e.clientX - r.left) / r.width;
         const py = (e.clientY - r.top) / r.height;

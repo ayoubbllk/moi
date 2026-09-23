@@ -44,28 +44,27 @@ export function Process() {
 
   return (
     <section id="process" className="bg-ink text-paper">
-      <div className="mx-auto max-w-[1440px] px-4 pt-20 sm:px-6 md:px-10 lg:pt-32">
+      <div className="mx-auto max-w-[1440px] px-4 pt-16 sm:px-6 sm:pt-20 md:px-10 lg:pt-32">
         <SectionLabel index="04" invert>
           {t.process.kicker}
         </SectionLabel>
-        <h2 className="mt-5 max-w-3xl font-display text-[clamp(2rem,8vw,4.1rem)] font-bold leading-[0.95] tracking-[-0.03em]">
+        <h2 className="mt-4 max-w-3xl font-display text-[clamp(1.85rem,8vw,4.1rem)] font-bold leading-[0.95] tracking-[-0.03em]">
           {t.process.title}
         </h2>
-        <p className="mt-5 font-mono text-[10px] uppercase tracking-[0.28em] text-paper/35">
-          {t.processHint}
-        </p>
+        {!mobile && (
+          <p className="mt-5 font-mono text-[10px] uppercase tracking-[0.28em] text-paper/35">
+            {t.processHint}
+          </p>
+        )}
       </div>
 
       {mobile || reduced ? (
-        <div className="mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-16 hide-scrollbar sm:px-6">
+        <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-3 px-4 py-8 sm:px-6 sm:py-12">
           {t.process.steps.map((s) => (
-            <article
-              key={s.n}
-              className="w-[82vw] shrink-0 snap-center border border-paper/10 bg-graphite p-6 sm:w-[60vw] sm:p-8"
-            >
-              <p className="font-display text-6xl font-bold leading-none text-ember/30">{s.n}</p>
-              <h3 className="mt-4 font-display text-2xl font-semibold">{s.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-paper/55 sm:text-base">{s.text}</p>
+            <article key={s.n} className="border border-paper/10 bg-graphite p-5 sm:p-7">
+              <p className="font-display text-4xl font-bold leading-none text-ember/35 sm:text-5xl">{s.n}</p>
+              <h3 className="mt-3 font-display text-xl font-semibold sm:text-2xl">{s.title}</h3>
+              <p className="mt-2 text-[14px] leading-relaxed text-paper/55 sm:text-base">{s.text}</p>
             </article>
           ))}
         </div>

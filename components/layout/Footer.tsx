@@ -10,7 +10,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-paper/10 bg-ink text-paper">
-      <div className="mx-auto flex max-w-[1440px] flex-col gap-8 px-4 py-12 pb-24 sm:px-6 md:flex-row md:items-end md:justify-between md:px-10 md:py-16 lg:pb-16">
+      <div className="mx-auto flex max-w-[1440px] flex-col gap-8 px-4 py-12 pb-20 sm:px-6 md:flex-row md:items-end md:justify-between md:px-10 md:py-16 lg:pb-16">
         <div>
           <Logo invert baseline={t.logo.baseline} />
           <p className="mt-4 max-w-xs text-sm text-paper/50">{t.footer.location}</p>
